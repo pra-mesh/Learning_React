@@ -1,12 +1,16 @@
 import NoDependency from "./useEffect/NoDependency";
 import HOC from "./HOC";
-import State from "./State";
-import StateQuestion from "./stateQuestion";
+import State from "./useState/State";
+import StateQuestion from "./useState/StateQuestion";
 import UseEffect1 from "./useEffect/UseEffect1";
 import UseEffect2 from "./useEffect/APIFetch";
 import EmptyArray from "./useEffect/EmptyArray";
 import APIFetchReceipes from "./useEffect/APIFetchReceipes";
 import APIFetch from "./useEffect/APIFetch";
+import HookFetch from "./useEffect/usingCustomHook/HookFetch";
+import Debounce from "./useEffect/debounced/Debounce";
+import SalesCountDown from "./useEffect/SalesCountDown";
+import User from "./contexts/User";
 
 function App() {
   return (
@@ -14,9 +18,15 @@ function App() {
       {/* <State color={"red"} />
       <hr />
       <StateQuestion /> */}
-      <APIFetchReceipes />
+      {/* <APIFetchReceipes />
       <hr />
-      <APIFetch />
+      <APIFetch /> */}
+      {/* <AuthContextProvider> */}
+      <User />
+      {/* </AuthContextProvider> */}
+      {/* <SalesCountDown /> */}
+      <hr />
+      {/* <Debounce /> */}
       {/* <hr />
       <UseEffect1 /> */}
       {/* <hr />
