@@ -118,4 +118,28 @@ Customs hooks start with "use". Example: useFectch.
 ## useContext Hooks
 
 It is use to manage state globally. It can be used together with the useState Hook to share state between deeply nested components moore easily
-than with useState alone and this process is called Props Drilling. Props drilling occurs in deep nesting when value is past children to children and only at last the value is used so, to solve we useContext
+than with useState alone and this process is called Props Drilling. Props drilling occurs in deep nesting when value is past children to children
+and only at last the value is used so, to solve we useContext
+
+## useRef Hook
+
+It is used to interactind directly with the DOM or child components and managing mutable values that don't need to trigger UI update.
+It is used for accessing DOM child instance storing mutable values without re-renders. When we can to access data from
+uncontrolled form (value managed by dom itself) we use ref hook. It is also used in focus activity such as (Scroll, video/audio control, big forms).
+
+## useTransition Hooks
+
+It is used to show loading state or slow update then we used this hook to manage certain state. It is used for heavy state update (Api fetch large volume of data) i.e
+filter large data, front end compution, loading ui, to show loading state.
+
+### Key Difference between useRef and useState
+
+- Stroing values doesnot require re-renders where as managing component state triggers re-render
+- Modifying values doesn't trigger re-renders where as updating state using function does re-render.
+- value should be treated as mutable where as should be treated immutable only updating using setter function.
+- on both value presists over re-render
+
+### Control vs uncontrolled form
+
+When the user inputs are captured in state then that form is controlled form
+where as the uncontrolled form is a form when we use DOM Elements to access the mutated data.

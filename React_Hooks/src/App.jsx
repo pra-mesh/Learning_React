@@ -13,6 +13,9 @@ import SalesCountDown from "./useEffect/SalesCountDown";
 import User from "./User";
 import Theme from "./Theme";
 import { ThemeContextProvidr } from "./contexts/ThemeContext";
+import RefHook from "./useRef/RefHook";
+import Transition from "./useTransition hook/Transition";
+import FetchTransition from "./useTransition hook/FetchTransition";
 
 function App() {
   return (
@@ -35,10 +38,13 @@ function App() {
       <UseEffect2 /> */}
       {/* <hr />
       <HOC /> */}
-      <hr />
-      <ThemeContextProvidr>
+
+      {/* <ThemeContextProvidr>
         <Theme />
-      </ThemeContextProvidr>
+      </ThemeContextProvidr> */}
+      {/* <RefHook /> */}
+      {/* <Transition /> */}
+      <FetchTransition />
     </>
   );
 }
