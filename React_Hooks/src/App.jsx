@@ -10,7 +10,9 @@ import APIFetch from "./useEffect/APIFetch";
 import HookFetch from "./useEffect/usingCustomHook/HookFetch";
 import Debounce from "./useEffect/debounced/Debounce";
 import SalesCountDown from "./useEffect/SalesCountDown";
-import User from "./contexts/User";
+import User from "./User";
+import Theme from "./Theme";
+import { ThemeContextProvidr } from "./contexts/ThemeContext";
 
 function App() {
   return (
@@ -33,6 +35,10 @@ function App() {
       <UseEffect2 /> */}
       {/* <hr />
       <HOC /> */}
+      <hr />
+      <ThemeContextProvidr>
+        <Theme />
+      </ThemeContextProvidr>
     </>
   );
 }

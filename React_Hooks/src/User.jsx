@@ -1,10 +1,7 @@
-import { useContext } from "react";
-import { AuthContext } from "./AuthContext";
+import { useAuthContext } from "./contexts/AuthContext";
 
 const User = () => {
-  const data = useContext(AuthContext);
-  if (!data) throw new Error("Authcontext needs to wrapped");
-  const { user, changeName } = data;
+  const { user, changeName } = useAuthContext();
   return (
     <div>
       <h1>User</h1>
