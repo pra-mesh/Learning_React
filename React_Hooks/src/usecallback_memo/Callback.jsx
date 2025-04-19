@@ -7,7 +7,7 @@ const Parent = () => {
   };
   const memoizedAddTodo = useCallback(() => {
     setTodos((prev) => [...prev, `I am ToDo no ${prev.length}`]);
-  }, []);
+  }, [todos]);
   return (
     <div>
       <Child todos={todos} addTodo={memoizedAddTodo} />

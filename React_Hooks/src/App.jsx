@@ -17,6 +17,8 @@ import RefHook from "./useRef/RefHook";
 import Transition from "./useTransition hook/Transition";
 import FetchTransition from "./useTransition hook/FetchTransition";
 import Callback from "./usecallback_memo/Callback";
+import Memo from "./usememo/Memo";
+import FilteredMemo from "./usememo/FilteredMemo";
 
 function App() {
   return (
@@ -46,7 +48,9 @@ function App() {
       {/* <RefHook /> */}
       {/* <Transition /> */}
       {/* <FetchTransition /> */}
-      <Callback />
+      {/* <Callback /> */}
+      {/* <Memo /> */}
+      <FilteredMemo />
     </>
   );
 }

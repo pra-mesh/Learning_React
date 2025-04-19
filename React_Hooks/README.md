@@ -150,9 +150,35 @@ It will avoid re-creating functions on every re-render which can improve perform
 - Pagination , scroll of data.
 - WebSocket or polling cleanup.
 
-useMemo and useCallback hook is used together to stop rerender of child or parent when value one component changes.
+Memo and useCallback hook is used together to stop rerender of child or parent when value one component changes.
 
 Syntax: `useCallback(() => {}, [dependencies])`
+
+## useMemo Hook
+
+It is used to memoizes the result of a computation i.e it only recalculates the value when dependencies change.
+It returns a cached value so your component can skip expensive calculations during re-renders/
+syntax
+
+```JS
+const memoizedValue = useMemo (() => {
+  return expensiveCalculation(input)
+},[input])
+```
+
+Common Use cases:
+
+- Filtering, sorting or mapping lists (Report organizing)
+- Derived state (from props/state)
+- conditional rendering logic
+- Avoiding unnecessary renders
+
+### useCallback vs useMemo
+
+- useCallback is used to memoizes a function where as useMemo for a computed value;
+- It returns function instance where as it returns value from calculation
+- It used when we need to avoid recreating a function where as it used for avoiding recalculation values.
+- It is used with React.Memo, event handlers and debouncing where as used with expensive computation and derived states
 
 ## HOC
 
