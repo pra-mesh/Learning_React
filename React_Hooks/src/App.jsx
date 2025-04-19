@@ -16,6 +16,7 @@ import { ThemeContextProvidr } from "./contexts/ThemeContext";
 import RefHook from "./useRef/RefHook";
 import Transition from "./useTransition hook/Transition";
 import FetchTransition from "./useTransition hook/FetchTransition";
+import Callback from "./usecallback_memo/Callback";
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
       </ThemeContextProvidr> */}
       {/* <RefHook /> */}
       {/* <Transition /> */}
-      <FetchTransition />
+      {/* <FetchTransition /> */}
+      <Callback />
     </>
   );
 }
