@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+import { Route, Routes } from "react-router";
+import About from "./pages/About";
+import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
+import Error from "./pages/Error";
+import Blogs from "./pages/blogs/blogs";
+import Blog from "./pages/blogs/blog";
+import GuestLayout from "./pages/layouts/GuestLayout";
+import AdminLayout from "./pages/layouts/AdminLayout";
+import PrivateRoute from "./component/PrivateRoute";
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <Routes>
+        <Route>
+          <Route element={<GuestLayout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
 
-export default App
+            <Route path="blogs" element={<Blogs />} />
+            <Route path="blog/:slug" element={<Blog />} />
+            <Route path="*" element={<Error />} />
+          </Route>
+        </Route>
+        {/* Admin Routes */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route
+            index
+            element={
+              <PrivateRoute role={["admin", "user"]}>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<Error />} />
+        </Route>
+      </Routes>
+    </>
+  );
+};
+
+export default App;
