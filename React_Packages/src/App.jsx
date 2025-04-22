@@ -8,6 +8,8 @@ import Blog from "./pages/blogs/blog";
 import GuestLayout from "./pages/layouts/GuestLayout";
 import AdminLayout from "./pages/layouts/AdminLayout";
 import PrivateRoute from "./component/PrivateRoute";
+import Unauthorized from "./pages/Unauthorized";
+import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
     <>
@@ -20,6 +22,7 @@ const App = () => {
             <Route path="blogs" element={<Blogs />} />
             <Route path="blog/:slug" element={<Blog />} />
             <Route path="*" element={<Error />} />
+            <Route path="unauthorized" element={<Unauthorized />} />
           </Route>
         </Route>
         {/* Admin Routes */}
@@ -27,11 +30,12 @@ const App = () => {
           <Route
             index
             element={
-              <PrivateRoute role={["admin", "user"]}>
+              <PrivateRoute role={""}>
                 <Dashboard />
               </PrivateRoute>
             }
           />
+          <Route path="unauthorized" element={<Unauthorized />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
