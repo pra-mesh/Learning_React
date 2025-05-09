@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { axiosInstance } from "../utils/axios";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const count = useSelector((state) => state.counter.value);
   const [data, setData] = useState([]);
   const fetchProducts = async (controller) => {
     const {
@@ -21,7 +23,12 @@ const Home = () => {
     return () => controller.abort();
   }, []);
 
-  return <div>{JSON.stringify(data)}</div>;
+  return (
+    <div>
+      <p>{count}</p>
+      {JSON.stringify(data)}{" "}
+    </div>
+  );
 };
 
 export default Home;

@@ -35,6 +35,9 @@ const Header = () => {
                 About
               </Link>
             </li>
+            <li>
+              <Link to="/tanstack" className={`nav-link ${pathname ==="/tanstack" ?"active" :""}`}>TanStack</Link>
+            </li>
             <li className="nav-item">
               <Link
                 to="/Login"

@@ -8,3 +8,13 @@ export const axiosInstance = axios.create({
     tenant: "OX001",
   },
 });
+
+axiosInstance.interceptors.request.use(
+  (config) => {
+    console.log("interceptors");
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
